@@ -1,6 +1,6 @@
 {
   "name": "ngx-object-diff",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An Angular 2+ library to compare and show object differences.",
   "author": {
     "name": "Saurabh Gangamwar",
@@ -10,5 +10,24 @@
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saurabh47/ngx-object-diff.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saurabh47/ngx-object-diff/issues"
+  },
+  "homepage": "https://github.com/saurabh47/ngx-object-diff",
+  "keywords": [
+    "angular",
+    "angular2+",
+    "ngx",
+    "json",
+    "object",
+    "diff",
+    "object-diff",
+    "javascript",
+    "typescript"
+  ]
 }

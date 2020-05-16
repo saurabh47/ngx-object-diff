@@ -1,6 +1,6 @@
 {
   "name": "ngx-object-diff-workspace",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An Angular 2+ library to compare and show object differences.",
   "author": {
     "name": "Saurabh Gangamwar",
@@ -52,5 +52,16 @@
     "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
-  }
+  },
+  "keywords": [
+    "angular",
+    "angular2+",
+    "ngx",
+    "json",
+    "object",
+    "diff",
+    "object-diff",
+    "javascript",
+    "typescript"
+  ]
 }
