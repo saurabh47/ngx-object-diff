@@ -1,0 +1,14 @@
+{
+  "name": "ngx-object-diff",
+  "version": "0.0.1",
+  "description": "An Angular 2+ library to compare and show object differences.",
+  "author": {
+    "name": "Saurabh Gangamwar",
+    "email": "saurabhgangamwar78@gmail.com"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  }
+}

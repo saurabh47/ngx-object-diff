@@ -2,5 +2,159 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "ngx-object-diff": {
+      "projectType": "library",
+      "root": "projects/ngx-object-diff",
+      "sourceRoot": "projects/ngx-object-diff/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-object-diff/tsconfig.lib.json",
+            "project": "projects/ngx-object-diff/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-object-diff/src/test.ts",
+            "tsConfig": "projects/ngx-object-diff/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-object-diff/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-object-diff/tsconfig.lib.json",
+              "projects/ngx-object-diff/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-object-diff-showcase": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ngx-object-diff-showcase",
+      "sourceRoot": "projects/ngx-object-diff-showcase/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-object-diff-showcase",
+            "index": "projects/ngx-object-diff-showcase/src/index.html",
+            "main": "projects/ngx-object-diff-showcase/src/main.ts",
+            "polyfills": "projects/ngx-object-diff-showcase/src/polyfills.ts",
+            "tsConfig": "projects/ngx-object-diff-showcase/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/ngx-object-diff-showcase/src/favicon.ico",
+              "projects/ngx-object-diff-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-object-diff-showcase/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-object-diff-showcase/src/environments/environment.ts",
+                  "with": "projects/ngx-object-diff-showcase/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-object-diff-showcase:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-object-diff-showcase:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-object-diff-showcase:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-object-diff-showcase/src/test.ts",
+            "polyfills": "projects/ngx-object-diff-showcase/src/polyfills.ts",
+            "tsConfig": "projects/ngx-object-diff-showcase/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-object-diff-showcase/karma.conf.js",
+            "assets": [
+              "projects/ngx-object-diff-showcase/src/favicon.ico",
+              "projects/ngx-object-diff-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-object-diff-showcase/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-object-diff-showcase/tsconfig.app.json",
+              "projects/ngx-object-diff-showcase/tsconfig.spec.json",
+              "projects/ngx-object-diff-showcase/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ngx-object-diff-showcase/e2e/protractor.conf.js",
+            "devServerTarget": "ngx-object-diff-showcase:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-object-diff-showcase:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "ngx-object-diff"
 }
