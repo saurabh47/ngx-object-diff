@@ -1,4 +1,4 @@
-# NgxObjectDiff
+# NgxObjectDiff  [![Known Vulnerabilities](https://snyk.io/test/github/saurabh47/ngx-object-diff/badge.svg?targetFile=projects/ngx-object-diff/package.json)](https://snyk.io/test/github/saurabh47/ngx-object-diff?targetFile=projects/ngx-object-diff/package.json)
 #### An Angular 2+ library to compare and show object differences.
 [Demo]( https://saurabh47.github.io/ngx-object-diff/)
 
